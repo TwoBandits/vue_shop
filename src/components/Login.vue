@@ -37,8 +37,6 @@
 </template>
 
 <script>
-import { Message } from 'element-ui'
-
 export default {
   name: 'Login',
   data() {
@@ -82,9 +80,9 @@ export default {
         else {
           const { data: res } = await this.$http.post('login', this.loginForm)
           if (res.meta.status !== 200) {
-            return Message.error('登录失败')
+            return this.$message.error('登录失败')
           } else {
-            Message.success('登录成功！')
+            this.$message.success('登录成功！')
             window.sessionStorage.setItem('token', res.data.token)
             this.$router.push('/home')
           }
