@@ -198,7 +198,7 @@
 
 <script>
 export default {
-  name: 'Users',
+  name: 'UsersList',
   data() {
     // 添加用户功能验证邮箱的验证规则
     const checkEmail = (rule, value, callback) => {

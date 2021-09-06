@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import axios from 'axios';
+import TreeTable from 'vue-table-with-tree-grid';
 
 import './plugins/element.js';
 import './assets/style/base.css';
@@ -17,6 +18,9 @@ axios.interceptors.request.use( config => {
   return config;
 })
 Vue.prototype.$http = axios;
+
+// 注册全局组件 tree-table
+Vue.component('tree-table',TreeTable);
 
 new Vue({
   router,
