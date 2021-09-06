@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Rights',
+  name: 'RightsList',
   data() {
     return {
       //   权限列表数据
