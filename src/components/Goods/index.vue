@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 <template>
   <div>
     <!-- 面包屑导航 -->
@@ -53,6 +54,7 @@
                 type="primary"
                 icon="el-icon-edit"
                 size="mini"
+                @click="goEditGoodPage(row.goods_id)"
               ></el-button>
             </el-tooltip>
             <el-tooltip effect="dark" content="删除" placement="top">
@@ -150,6 +152,11 @@ export default {
       }
       this.$message.succeess('删除成功')
       this.getGoodsList()
+    },
+    // 去编辑商品页面
+    goEditGoodPage(id) {
+      console.log(id)
+      this.$router.push({ path: '/goods/edit', query: { goodId: id } })
     },
   },
 }
