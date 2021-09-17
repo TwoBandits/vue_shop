@@ -11,6 +11,7 @@ import Cate from './components/Goods/Cate';
 import Params from './components/Goods/Params';
 import GoodsList from './components/Goods';
 import AddGoods from './components/Goods/AddGoods';
+import EditGood from './components/Goods/EditGood';
 
 Vue.use(Router);
 
@@ -26,16 +27,43 @@ const router = new Router({
         {
             path: '/home',
             component: Home,
-            redirect:'/welcome',
-            children:[
-                {path:'/welcome',component:Welcome},
-                {path:'/users',component:UsersList},
-                {path:'/rights',component:RightsList},
-                {path:'/roles',component:RolesList},
-                {path:'/categories',component:Cate},
-                {path:'/params',component:Params},
-                {path:'/goods',component:GoodsList},
-                {path:'/goods/add',component:AddGoods}
+            redirect: '/welcome',
+            children: [{
+                    path: '/welcome',
+                    component: Welcome
+                },
+                {
+                    path: '/users',
+                    component: UsersList
+                },
+                {
+                    path: '/rights',
+                    component: RightsList
+                },
+                {
+                    path: '/roles',
+                    component: RolesList
+                },
+                {
+                    path: '/categories',
+                    component: Cate
+                },
+                {
+                    path: '/params',
+                    component: Params
+                },
+                {
+                    path: '/goods',
+                    component: GoodsList
+                },
+                {
+                    path: '/goods/add',
+                    component: AddGoods
+                },
+                {
+                    path: '/goods/edit',
+                    component: EditGood,
+                }
             ]
         }
     ]

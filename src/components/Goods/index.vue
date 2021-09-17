@@ -53,6 +53,7 @@
                 type="primary"
                 icon="el-icon-edit"
                 size="mini"
+                @click="goEditGoodPage(row.goods_id)"
               ></el-button>
             </el-tooltip>
             <el-tooltip effect="dark" content="删除" placement="top">
@@ -80,8 +81,6 @@
       >
       </el-pagination>
     </el-card>
-
-
   </div>
 </template>
 
@@ -129,25 +128,35 @@ export default {
     },
     // 删除商品
     async removeGoodById(goods_id) {
-      const confirmResult = await this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning',
-      }).catch(err => err)
-      if(confirmResult !== 'confirm') {
+      const confirmResult = await this.$confirm(
+        '此操作将永久删除该文件, 是否继续?',
+        '提示',
+        {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning',
+        }
+      ).catch((err) => err)
+      if (confirmResult !== 'confirm') {
         return this.$message.info('已取消删除')
       }
 
-      const {data:res} = await this.$http.delete(`goods/${goods_id}`)
-      if( res.meta.status !== 200 ) {
+      const { data: res } = await this.$http.delete(`goods/${goods_id}`)
+      if (res.meta.status !== 200) {
         return this.$message.error('删除失败')
       }
       this.$message.succeess('删除成功')
       this.getGoodsList()
     },
+    // 去添加商品页面
     goAddpage() {
       this.$router.push('/goods/add')
-    }
+    },
+    // 去编辑商品页面
+    goEditGoodPage(id) {
+      console.log(id)
+      this.$router.push({ path: '/goods/edit', query: { goodId: id } })
+    },
   },
 }
 </script>
