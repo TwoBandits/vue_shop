@@ -300,7 +300,7 @@ export default {
     // 删除角色相关
     async removeRoleById(id) {
       const confirmResult = await this.$confirm(
-        '此操作将永久删除该文件, 是否继续?',
+        '此操作将永久删除该角色, 是否继续?',
         '提示',
         {
           confirmButtonText: '确定',
@@ -323,7 +323,7 @@ export default {
     // 根据ID删除对应权限
     async removeRightById(role, rightId) {
       const confirmResult = await this.$confirm(
-        '此操作将永久删除该文件, 是否继续?',
+        '此操作将永久删除角色对应的该权限, 是否继续?',
         '提示',
         {
           confirmButtonText: '确定',
