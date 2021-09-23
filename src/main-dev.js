@@ -18,9 +18,6 @@ import 'quill/dist/quill.bubble.css' // for bubble theme
 // nprogress对应样式
 import 'nprogress/nprogress.css'
 
-import './assets/style/base.css';
-import './assets/style/fonts/iconfont.css';
-
 Vue.config.productionTip = false;
 
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/';
