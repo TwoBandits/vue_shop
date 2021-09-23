@@ -134,7 +134,7 @@ export default {
     // 删除商品
     async removeGoodById(goods_id) {
       const confirmResult = await this.$confirm(
-        '此操作将永久删除该文件, 是否继续?',
+        '此操作将永久删除该商品, 是否继续?',
         '提示',
         {
           confirmButtonText: '确定',
@@ -150,12 +150,11 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.error('删除失败')
       }
-      this.$message.succeess('删除成功')
+      this.$message.success('删除成功')
       this.getGoodsList()
     },
     // 去编辑商品页面
     goEditGoodPage(id) {
-      console.log(id)
       this.$router.push({ path: '/goods/edit', query: { goodId: id } })
     },
   },

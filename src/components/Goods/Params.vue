@@ -483,10 +483,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-s .cat_opt {
+.cat_opt {
   margin: 15px 0;
 }
 .input-new-tag {
   width: 120px;
+}
+.el-tag {
+  margin: 0 15px;
 }
 </style>

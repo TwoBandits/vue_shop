@@ -296,7 +296,6 @@ export default {
     // 确定提交编辑分类请求
     editCate() {
       this.$refs.editCateFormRef.validate(async (validate) => {
-        console.log(this.editCateForm)
         if (!validate) return
         const { data: res } = await this.$http.put(
           `categories/${this.editCateForm.cat_id}`,
@@ -304,7 +303,6 @@ export default {
             cat_name: this.editCateForm.cat_name,
           }
         )
-        console.log(res)
         if (res.meta.status !== 200) {
           return this.$message.error('编辑分类失败')
         }
@@ -329,7 +327,6 @@ export default {
           type: 'warning',
         }
       ).catch( err => err )
-      console.log(confirmResult);
       if (confirmResult === 'cancel') {
         this.$message.error('已取消删除！')
       }

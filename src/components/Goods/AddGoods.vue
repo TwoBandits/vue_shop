@@ -318,6 +318,7 @@ export default {
         form.attrs = this.addGoodInfoForm.attrs
 
         const {data:res} = await this.$http.post('goods',form)
+        console.log(res.meta)
         if(res.meta.status !== 201 ) {
           return this.$message.error('添加商品失败')
         }
