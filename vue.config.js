@@ -10,5 +10,15 @@ module.exports = {
             config.entry('app').clear().add('./src/main-dev.js')
         })
     },
-    publicPath:'./'
+    publicPath:'./',
+    outputDir:'docs',
+    devServer: {
+        proxy: {
+          '/api': {
+            target: 'http://127.0.0.1:8888/api/private/v1/',
+            ws: true,
+            changeOrigin: true
+          }
+        }
+      }
 }
