@@ -20,7 +20,7 @@ import 'nprogress/nprogress.css'
 
 Vue.config.productionTip = false;
 
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/';
+axios.defaults.baseURL = 'http://121.199.13.241:8889/api/private/v1/';
 // axios请求拦截器
 axios.interceptors.request.use(config => {
   // 在页面展示进度条
